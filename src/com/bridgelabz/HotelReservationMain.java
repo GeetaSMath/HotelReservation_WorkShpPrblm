@@ -21,29 +21,33 @@ public class HotelReservationMain {
         //giving start and end dates of the schedule
         LocalDate dateStart = LocalDate.of(2020, Month.SEPTEMBER, 11);
         LocalDate dateEnd = LocalDate.of(2020, Month.SEPTEMBER, 12);
-        System.out.println("Starting date : "+dateStart);
-        System.out.println("Ending date : "+dateEnd);
-        int noOfDays = (int) ChronoUnit.DAYS.between(dateStart, dateEnd)+1;
-        System.out.println("Total days is : "+noOfDays);
+        System.out.println("Starting date : " + dateStart);
+        System.out.println("Ending date : " + dateEnd);
+        int noOfDays = (int) ChronoUnit.DAYS.between(dateStart, dateEnd) + 1;
+        System.out.println("Total days is : " + noOfDays);
 
         //finding getWeekDaysCount
         int weekEndsCount = hotelReservation.getWeekDaysCount(dateStart, noOfDays);
         int weekDaysCount = noOfDays - weekEndsCount;
 
         boolean cont = true;
-        while (cont){
+        while (cont) {
             System.out.println("1:Reward Rated Hotels 2:Normal Hotel Rates 0:Exit");
             int opt = sc.nextInt();
-            switch (opt){
+            switch (opt) {
                 case 1:
                     boolean cont1 = true;
-                    while (cont1){
-                        System.out.println("1:Cheapest best rated hotel 0:Exit");
+                    while (cont1) {
+                        System.out.println("1:Cheapest best rated hotel 2:cheapest best rated hotel Hotel 0:Exit");
                         int opt1 = sc.nextInt();
-                        switch (opt1){
+                        switch (opt1) {
                             case 1:
                                 //this class will do booking hotels and list of hotels and finding weekdays count and finding best rate hotel
                                 hotelReservation.getMinPriceBestRatedHotel(weekEndsCount, weekDaysCount, 1);
+                                break;
+                            case 2:
+                                //this class will do booking hotels and list of hotels and finding weekdays count and finding best rated and best coast hotel
+                                hotelReservation.getMinPriceBestRatedHotel(weekEndsCount, weekDaysCount, 2);
                                 break;
                             case 0:
                                 cont1 = false;
@@ -52,10 +56,10 @@ public class HotelReservationMain {
                     }
                 case 2:
                     boolean cont2 = true;
-                    while (cont2){
+                    while (cont2) {
                         System.out.println("1:Best Minimum price range Hotel 2:Best Minimum price range with average rated Hotel 3:Best Rated Hotel Or 0:toExit");
                         int opt2 = sc.nextInt();
-                        switch (opt2){
+                        switch (opt2) {
                             case 1:
                                 hotelReservation.getMinPriceHotel(weekEndsCount, weekDaysCount, opt);
                                 break;
@@ -66,7 +70,7 @@ public class HotelReservationMain {
                                 hotelReservation.getMinPriceHotel(weekEndsCount, weekDaysCount, opt);
                                 break;
                             case 0:
-                                cont=false;
+                                cont = false;
                                 break;
                         }
                     }
