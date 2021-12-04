@@ -3,13 +3,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-class Hotel{
+ public class Hotel{
     public String getHotelName() {
         return hotelName;
     }
     public Hotel(){
 
-    }
+    };
 
     public void setHotelName(String hotelName) {
         this.hotelName = hotelName;
