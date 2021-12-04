@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public  class Hotel{
+class Hotel{
     public String getHotelName() {
         return hotelName;
     }
@@ -58,12 +58,10 @@ public  class Hotel{
         this.hotelRating = hotelRating;
     }
 
-
-
 }
 
 //this class will do booking hotels and list of hotels and finding weekdays count and finding best rate hotel
-public class HotelReservation extends Hotel {
+class HotelReservation extends Hotel {
     public ArrayList<Hotel> hotelDetails = new ArrayList<Hotel>();
 
     //ooking hotels and list of hotels
@@ -102,7 +100,7 @@ public class HotelReservation extends Hotel {
         totalRate1 = (weekEndsCount) * (minWeekDays.getHotelPriceWeekEnds()) + (weekDaysCount) * (minWeekDays.getHotelPriceWeekDays());
         totalRate2 = (weekEndsCount) * (minWeekEnd.getHotelPriceWeekEnds()) + (weekDaysCount) * (minWeekEnd.getHotelPriceWeekDays());
 
-        if (totalRate1 < totalRate2) {
+        if (totalRate1 < totalRate2 && minWeekDays.getHotelRating() > minWeekEnd.getHotelRating()) {
             System.out.println("Best rate Hotel is : " + minWeekDays.getHotelName());
             System.out.println(minWeekDays);
             System.out.println(minWeekDays.getHotelName() + " Total Rate is : " + totalRate1);

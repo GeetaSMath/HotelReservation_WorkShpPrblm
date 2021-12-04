@@ -1,6 +1,4 @@
 package com.bridgelabz;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.time.LocalDate;
 
 import java.time.Month;
@@ -12,16 +10,18 @@ public class HotelReservationMain {
         hotelReservation.addHotel("LakeWood", 110, 90, 3);
         hotelReservation.addHotel("BridgeWood", 150, 50, 4);
         hotelReservation.addHotel("RidgeWood", 220, 150, 5);
+
         //list out hotel Details
         hotelReservation.getHotelDetails();
 
         //giving start and end dates of the schedule
         LocalDate dateStart = LocalDate.of(2021, Month.AUGUST, 11);
         LocalDate dateEnd = LocalDate.of(2021, Month.AUGUST, 20);
-        System.out.println("Starting date : "+dateStart);
-        System.out.println("Ending date : "+dateEnd);
+        System.out.println("Starting date : " + dateStart);
+        System.out.println("Ending date : " + dateEnd);
         int noOfDays = (int) ChronoUnit.DAYS.between(dateStart, dateEnd);
-        System.out.println("Total days is : "+noOfDays);
+        System.out.println("Total days is : " + noOfDays);
+
         //finding getWeekDaysCount
         int weekEndsCount = hotelReservation.getWeekDaysCount(dateStart, noOfDays);
         int weekDaysCount = noOfDays - weekEndsCount;
