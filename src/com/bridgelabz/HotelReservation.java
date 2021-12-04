@@ -1,5 +1,4 @@
 package com.bridgelabz;
-import java.util.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -8,7 +7,9 @@ class Hotel{
     public String getHotelName() {
         return hotelName;
     }
-    public Hotel(){};
+    public Hotel(){
+
+    }
 
     public void setHotelName(String hotelName) {
         this.hotelName = hotelName;
@@ -55,7 +56,7 @@ public class HotelReservation extends Hotel {
     public ArrayList<Hotel> hotelDetails = new ArrayList<Hotel>();
 
     //ooking hotels and list of hotels
-    public void addHotel(String hotelName, int hotelPriceWeekDays, int hotelPriceWeekEnds) {
+    public void addHotel(String hotelName, int priceWeekDays, int hotelPriceWeekDays, int hotelPriceWeekEnds) {
         Hotel adder = new Hotel(hotelName, hotelPriceWeekDays, hotelPriceWeekEnds);
         hotelDetails.add(adder);
     }
